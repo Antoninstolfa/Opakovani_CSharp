@@ -1,0 +1,10 @@
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\bin\Debug\Úkol 1, 2.exe.config
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\bin\Debug\Úkol 1, 2.exe
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\bin\Debug\Úkol 1, 2.pdb
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.csprojAssemblyReference.cache
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol_1__2.Form1.resources
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol_1__2.Properties.Resources.resources
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.csproj.GenerateResource.cache
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.csproj.CoreCompileInputs.cache
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.exe
+G:\PRG\Opakovani C#\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.pdb
