@@ -17,24 +17,26 @@ namespace Úkol_1__2
             InitializeComponent();
         }
 
-        void Vypis(List<int> List1, ListBox listboxik) // budto vypis nebo cyklus je spatne, o jedno mene
+        void Vypis(List<int> List1, ListBox listboxik) // ok
         {
-            for(int i = 1; i < List1.Count(); i++)
+            foreach (int cisla in List1)
             {
-                listboxik.Items.Add(List1[i]);
+                listboxik.Items.Add(cisla);
             }
         }
-        int DruheMax(int cislo, int N, int Max) // dodelat na druhe
+        int DruheMax(List<int> List1) // ok
         {
-            while(N != 0)
+            int Max = int.MinValue;
+            int druheMax = 0;
+            foreach (int cislo in List1)
             {
                 if(cislo > Max)
                 {
+                    druheMax = Max;
                     Max = cislo;
                 }
-                N--;
             }
-            return Max;
+            return druheMax;
         }
 
         bool Dokonale(int cislo) // dodelat
@@ -58,17 +60,42 @@ namespace Úkol_1__2
                 return false;
             }
         }
-        void VymazDokonale() // dodelat
+        void VymazDokonale(List<int> List1) // dodelat
         {
-
+            foreach(int cislo in List1)
+            {
+                if(Dokonale(cislo) == true)
+                {
+                    List1.Remove(cislo);
+                }
+            }
         }
+        int CifernySoucet(List<int> List1)
+        {
+            int Max = int.MinValue;
+            foreach(int cislo in List1)
+            {
+                if(cislo > Max)
+                {
+                    Max = cislo;
+                }
+            }
+            int soucet = 0;
+            while(Max > 1)
+            {
+                soucet += Convert.ToInt32(Max % 10);
+                Max /= 10;
+            }
+            return soucet;
+        }
+
+        List<int> list = new List<int>();
 
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+            list.Clear();
             int N = Convert.ToInt32(textBox1.Text);
-            List<int> list = new List<int>();
-            int Max = int.MinValue;
             int cislo;
             int i = 0;
             Random rng = new Random();
@@ -76,11 +103,130 @@ namespace Úkol_1__2
             {
                 cislo = rng.Next(-5, 99);
                 list.Add(cislo);
-                MaxOdpoved.Text = DruheMax(cislo, N, Max).ToString();
                 N--;
                 i++;
             }
             Vypis(list, listBox1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            VymazDokonale(list);
+            Vypis(list, listBox2);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            list.Sort();
+            Vypis(list, listBox3);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            double soucet = 0;
+            double pocet = list.Count();
+            double vysledek = 0.0;
+            foreach (int cislo in list)
+            {
+                soucet += cislo;
+            }
+            vysledek = soucet / pocet;
+            APOdpoved.Text = vysledek.ToString();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MaxOdpoved.Text = DruheMax(list).ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int Max = int.MinValue;
+            foreach(int cislo in list)
+            {
+                if(cislo > Max)
+                {
+                    Max = cislo;
+                }
+            }
+            MaxOdpoved2.Text = Max.ToString();
+            CSoucetOdpoved.Text = CifernySoucet(list).ToString();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pardón, více jsem toho bohužel nestihl :(", "Error 404", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Gold;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.LawnGreen;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.ForeColor = Color.Gold;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.ForeColor = Color.LawnGreen;
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.ForeColor = Color.Gold;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.ForeColor = Color.LawnGreen;
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            button4.ForeColor = Color.Gold;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            button4.ForeColor = Color.LawnGreen;
+        }
+
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            button5.ForeColor = Color.Gold;
+        }
+
+        private void button5_MouseLeave(object sender, EventArgs e)
+        {
+            button5.ForeColor = Color.LawnGreen;
+        }
+
+        private void button6_MouseEnter(object sender, EventArgs e)
+        {
+            button6.ForeColor = Color.Gold;
+        }
+
+        private void button6_MouseLeave(object sender, EventArgs e)
+        {
+            button6.ForeColor = Color.LawnGreen;
+        }
+
+        private void button7_MouseEnter(object sender, EventArgs e)
+        {
+            button7.ForeColor = Color.Gold;
+        }
+
+        private void button7_MouseLeave(object sender, EventArgs e)
+        {
+            button7.ForeColor = Color.LawnGreen;
         }
     }
 }
