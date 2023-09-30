@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Úkol_1__2
         public Form1()
         {
             InitializeComponent();
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
         }
 
         void Vypis(List<int> List1, ListBox listboxik) // ok
@@ -90,23 +97,53 @@ namespace Úkol_1__2
         }
 
         List<int> list = new List<int>();
+        List<char> znaky = new List<char>();
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            list.Clear();
-            int N = Convert.ToInt32(textBox1.Text);
-            int cislo;
-            int i = 0;
-            Random rng = new Random();
-            while(N != 0)
+            try
             {
-                cislo = rng.Next(-5, 99);
-                list.Add(cislo);
-                N--;
-                i++;
+                listBox1.Items.Clear();
+                list.Clear();
+                int N = Convert.ToInt32(textBox1.Text);
+                if(N<1)
+                {
+                    MessageBox.Show("N musí být větší než 0!!!!!!!!");
+                }
+                else
+                {
+                    int cislo;
+                    int i = 0;
+                    Random rng = new Random();
+                    while (N != 0)
+                    {
+                        cislo = rng.Next(-4, 100);
+                        list.Add(cislo);
+                        N--;
+                        i++;
+                    }
+                    Vypis(list, listBox1);
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                    button5.Enabled = true;
+                    button6.Enabled = true;
+                    button7.Enabled = true;
+                }
             }
-            Vypis(list, listBox1);
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (OverflowException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -118,26 +155,42 @@ namespace Úkol_1__2
 
         private void button3_Click(object sender, EventArgs e)
         {
+            listBox3.Items.Clear();
             list.Sort();
             Vypis(list, listBox3);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            double soucet = 0;
-            double pocet = list.Count();
-            double vysledek = 0.0;
-            foreach (int cislo in list)
+            try
             {
-                soucet += cislo;
+                double soucet = 0;
+                double pocet = list.Count();
+                double vysledek = 0.0;
+                foreach (int cislo in list)
+                {
+                    soucet += cislo;
+                }
+                vysledek = soucet / pocet;
+                APOdpoved.Text = vysledek.ToString();
             }
-            vysledek = soucet / pocet;
-            APOdpoved.Text = vysledek.ToString();
+            catch(DivideByZeroException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            MaxOdpoved.Text = DruheMax(list).ToString();
+            int N = Convert.ToInt32(textBox1.Text);
+            if(N<2)
+            {
+                MaxOdpoved.Text = "Není";
+            }
+            else
+            {
+                MaxOdpoved.Text = DruheMax(list).ToString();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -156,7 +209,15 @@ namespace Úkol_1__2
 
         private void button7_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Pardón, více jsem toho bohužel nestihl :(", "Error 404", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            znaky.Clear();
+            listBox4.Items.Clear();
+            for (int i = 0; i < list.Count(); i++)
+            {
+                char znak = Convert.ToChar(list[i]);
+                if (znak >= 'A' && znak <= 'Z') znaky.Add(znak);
+                else znaky.Add('*');
+                listBox4.Items.Add(znaky[i]);
+            }
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
