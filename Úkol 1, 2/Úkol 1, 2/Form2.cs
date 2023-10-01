@@ -19,38 +19,36 @@ namespace Úkol_1__2
 
         void PoslPrvocislo(int[] pole, out int prvocislo, out int index)
         {
-            int i = 0;
-            bool konec = false;
-            int delitel = 1, pocetdelitelu = 0;
             prvocislo = 0;
             index = 0;
-            int cislo;
-            while(i != pole.Count())
+            bool konec = false;
+            for (int i = 0; i < pole.Count(); i++)
             {
-                cislo = pole[i];
-                while(delitel<=cislo || konec != true)
+                konec = false;
+                int cislo = pole[i];
+                if (cislo != 1)
                 {
-                    if(cislo % delitel == 0)
+                    if (cislo != 2)
                     {
-                        pocetdelitelu++;
+
+
+                        for (int delitel = 2; delitel <= (int)Math.Sqrt(cislo); ++delitel)
+                        {
+                            if (cislo % delitel == 0)
+                            {
+                                konec = false;
+                                break;
+                            }
+                            else konec = true;
+                        }
                     }
-                    if (pocetdelitelu > 2)
-                    {
-                        konec = true;
-                    }
-                    delitel++;
+                    else if (cislo == 2) konec = true;
                 }
-                if (pocetdelitelu == 2)
+                if (konec)
                 {
                     prvocislo = cislo;
                     index = i;
                 }
-                konec = false;
-                i++;
-            }
-            if(prvocislo == 0)
-            {
-                MessageBox.Show("Nebylo nalezeno žádné prvočíslo!");
             }
         }
 
