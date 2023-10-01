@@ -50,7 +50,7 @@ namespace Úkol_1__2
         {
             int delitel = 1;
             int soucetdelitelu = 0;
-            while (delitel != cislo)
+            while (delitel < cislo)
             {
                 if(cislo % delitel == 0)
                 {
@@ -69,11 +69,18 @@ namespace Úkol_1__2
         }
         void VymazDokonale(List<int> List1) // dodelat
         {
-            foreach(int cislo in List1)
+            /*foreach(int cislo in List1)
             {
                 if(Dokonale(cislo) == true)
                 {
                     List1.Remove(cislo);
+                }
+            }*/
+            for (int i = 0; i < List1.Count(); i++)
+            {
+                if (Dokonale(List1[i]))
+                {
+                    List1.Remove(List1[i]);
                 }
             }
         }
@@ -214,8 +221,14 @@ namespace Úkol_1__2
             for (int i = 0; i < list.Count(); i++)
             {
                 char znak = Convert.ToChar(list[i]);
-                if (znak >= 'A' && znak <= 'Z') znaky.Add(znak);
-                else znaky.Add('*');
+                if (znak >= 'A' && znak <= 'Z')
+                {
+                    znaky.Add(znak);
+                }
+                else
+                {
+                    znaky.Add('*');
+                } 
                 listBox4.Items.Add(znaky[i]);
             }
         }
@@ -288,6 +301,25 @@ namespace Úkol_1__2
         private void button7_MouseLeave(object sender, EventArgs e)
         {
             button7.ForeColor = Color.LawnGreen;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            Form2 form2 = new Form2();
+            this.Hide();
+            form2.ShowDialog();
+            this.Close();
+        }
+
+        private void button8_MouseEnter(object sender, EventArgs e)
+        {
+            button8.ForeColor = Color.Violet;
+        }
+
+        private void button8_MouseLeave(object sender, EventArgs e)
+        {
+            button8.ForeColor = Color.LawnGreen;
         }
     }
 }

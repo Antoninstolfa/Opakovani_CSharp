@@ -29,3 +29,14 @@ D:\Tonda\PRG\Ukol1,2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.csproj.GenerateR
 D:\Tonda\PRG\Ukol1,2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.csproj.CoreCompileInputs.cache
 D:\Tonda\PRG\Ukol1,2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.exe
 D:\Tonda\PRG\Ukol1,2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.pdb
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\bin\Debug\Úkol 1, 2.exe.config
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\bin\Debug\Úkol 1, 2.exe
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\bin\Debug\Úkol 1, 2.pdb
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.csproj.AssemblyReference.cache
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol_1__2.Form1.resources
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol_1__2.Properties.Resources.resources
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.csproj.GenerateResource.cache
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.csproj.CoreCompileInputs.cache
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.exe
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol 1, 2.pdb
+D:\Antonín Štolfa\PRG\C# opakovani\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\Úkol 1, 2\obj\Debug\Úkol_1__2.Form2.resources
